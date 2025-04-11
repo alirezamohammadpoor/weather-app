@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: Roboto;
+}
+
+body.loading {
+  visibility: hidden;
+}
+
+form {
+  color: white;
+}
+
+.input-location {
+  width: 30vw;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(226, 226, 226);
+  padding-left: 2rem;
+  margin: 0;
+  border: none;
+}
+
+.input-location::placeholder {
+  color: black;
+}
+
+.input-location:focus {
+  outline: none;
+}
+
+.current-conditions {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.current-conditions span:first-child {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.weather-emoji {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 70vw;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  height: 20vh;
+  margin-top: 10vh;
+}

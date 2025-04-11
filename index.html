@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="search-container">
+      <form>
+        <input
+          class="input-location"
+          id="location"
+          placeholder="Search for a location"
+          type="text"
+          required
+        />
+      </form>
+    </div>
+    <h1 class="location">Location</h1>
+    <div class="weather-card">
+      <div class="weather-emoji"></div>
+      <div class="temperature"></div>
+      <div class="min-max-container">
+        <div class="min"></div>
+        <div class="max"></div>
+        <p class="feels-like"></p>
+      </div>
+    </div>
+    <span class="current-conditions">☀️</span>
+    <div class="grid-container">
+      <div class="wind">Wind: 5 km/h</div>
+      <div class="humidity">Humidity: 70%</div>
+      <div class="rain"></div>
+      <div class="uv-index"></div>
+      <div class="sunrise"></div>
+      <div class="sunset"></div>
+    </div>
+  </body>
+</html>
