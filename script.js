@@ -155,6 +155,70 @@ function updateWeatherDisplay(weatherData) {
     weatherData.currentConditions.sunset.split(":")[1];
 }
 
+/// HOURLY
+
+function hourlyWeatherDisplay(weatherData) {
+  const date = new Date();
+  const hour = date.getHours();
+  const min = date.getMinutes();
+
+  for (let i = 0; i < weatherData.days[0].hours.length; i++) {
+    if (Number(weatherData.days[0].hours[i].datetime.split(":")[0]) === hour) {
+      const hourArraySliced = weatherData.days[0].hours.slice(i, i + 8);
+
+      for (let j = 0; j < hourArraySliced.length; j++) {
+        const hourlyTime = document.querySelector(
+          `.hourly-item-${j} .hourly-time`
+        );
+        const hourlyTemp = document.querySelector(
+          `.hourly-item-${j} .hourly-temp`
+        );
+
+        const timeParts = hourArraySliced[j].datetime.split(":");
+        const formattedTime = timeParts[0] + ":" + timeParts[1];
+
+        hourlyTime.textContent = formattedTime;
+        hourlyTemp.textContent = hourArraySliced[j].temp + "°";
+
+        const hourlyItem = document.querySelector(`.hourly-item-${j}`);
+        const hourlyWeatherIcon = hourlyItem.querySelector(".hourly-icon");
+        hourlyWeatherIcon.innerHTML = "";
+
+        const hourlyWeatherImg = document.createElement("img");
+        hourlyWeatherImg.className = "hourly-img";
+
+        if (hourArraySliced[j].conditions === "Clear") {
+          hourlyWeatherImg.src =
+            "./weather-icons-master/production/fill/all/clear-day.svg";
+        } else if (hourArraySliced[j].conditions === "Partially cloudy") {
+          hourlyWeatherImg.src =
+            "./weather-icons-master/production/fill/all/partly-cloudy-day.svg";
+        } else if (hourArraySliced[j].conditions === "Cloudy") {
+          hourlyWeatherImg.src =
+            "./weather-icons-master/production/fill/all/cloudy.svg";
+        } else if (hourArraySliced[j].conditions === "Overcast") {
+          hourlyWeatherImg.src =
+            "./weather-icons-master/production/fill/all/overcast-day.svg";
+        } else if (hourArraySliced[j].conditions === "Rain") {
+          hourlyWeatherImg.src =
+            "./weather-icons-master/production/fill/all/rain.svg";
+        } else if (hourArraySliced[j].conditions === "Snow") {
+          hourlyWeatherImg.src =
+            "./weather-icons-master/production/fill/all/snow.svg";
+        } else if (hourArraySliced[j].conditions === "Thunderstorm") {
+          hourlyWeatherImg.src =
+            "./weather-icons-master/production/fill/all/thunderstorms.svg";
+        } else if (hourArraySliced[j].conditions === "Fog") {
+          hourlyWeatherImg.src =
+            "./weather-icons-master/production/fill/all/fog.svg";
+        }
+
+        hourlyWeatherIcon.appendChild(hourlyWeatherImg);
+      }
+    }
+  }
+}
+
 // Define the default function
 async function loadDefaultWeather() {
   try {
@@ -169,7 +233,7 @@ async function loadDefaultWeather() {
       weatherData.currentConditions.conditions
     );
     updateWeatherDisplay(weatherData);
-    console.log(data);
+    hourlyWeatherDisplay(weatherData);
     document.body.classList.remove("loading");
   } catch (error) {
     console.error("Error fetching weather data:", error);
@@ -197,6 +261,7 @@ formSubmitted.addEventListener("submit", function (e) {
       const data = await response.json();
       weatherData = data;
       updateWeatherDisplay(weatherData);
+      hourlyWeatherDisplay(weatherData);
     } catch (error) {
       console.error("Error fetching weather data:", error);
     }

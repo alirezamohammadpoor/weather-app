@@ -87,8 +87,9 @@ form {
   justify-content: center;
   align-items: center;
   justify-items: center;
-  height: 40vh;
-  margin-top: 10vh;
+  height: 20vh;
+  margin-top: 0vh;
+  margin-bottom: 5vh;
 }
 
 .wind,
@@ -97,8 +98,6 @@ form {
 .uv-index,
 .sunrise,
 .sunset {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,4 +139,56 @@ form {
 .max-temp-icon {
   width: 6rem;
   height: 6rem;
+}
+
+.grid-container p {
+  font-weight: 500;
+}
+
+.hourly-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 70vw;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  height: 10vh;
+  gap: 1rem;
+}
+
+.hourly-item-0,
+.hourly-item-1,
+.hourly-item-2,
+.hourly-item-3,
+.hourly-item-4,
+.hourly-item-5,
+.hourly-item-6,
+.hourly-item-7 {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(224, 224, 224);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.hourly-text {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hourly-icon,
+.hourly-img {
+  width: 4rem;
+  height: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.hourly-container p {
+  margin: 0;
+  font-weight: 500;
 }
