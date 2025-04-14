@@ -33,21 +33,50 @@ form {
   outline: none;
 }
 
-.current-conditions {
-  font-size: 2rem;
+.weather-card {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  width: 70vw;
 }
 
-.current-conditions span:first-child {
-  font-size: 4rem;
-  line-height: 1;
+.temperature {
+  font-size: 8rem;
+  display: flex;
+  align-items: center;
 }
 
-.weather-emoji {
-  font-size: 4rem;
-  line-height: 1;
+.temperature div {
+  margin-left: -30px;
+}
+
+.celsius-icon {
+  width: 7rem;
+  height: 7rem;
+  margin-top: -70px;
+  margin-left: -40px;
+  color: black;
+}
+
+.conditions-data {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.weather-icon-left {
+  width: 8rem;
+  height: 8rem;
+}
+
+.weather-icon-left-big {
+  width: 16rem;
+  height: 16rem;
+  display: block;
+}
+
+.weather-info-icon-big {
+  width: 16rem;
+  height: 16rem;
+  display: block;
 }
 
 .grid-container {
@@ -58,6 +87,57 @@ form {
   justify-content: center;
   align-items: center;
   justify-items: center;
-  height: 20vh;
+  height: 40vh;
   margin-top: 10vh;
+}
+
+.wind,
+.humidity,
+.rain,
+.uv-index,
+.sunrise,
+.sunset {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-info-icon {
+  width: 8rem;
+  height: 8rem;
+  display: block;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start (left) */
+  gap: 0.5rem; /* Add some space between items */
+}
+
+.weather-info p {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+.min-max-container {
+  display: flex;
+  margin-left: auto;
+}
+
+.min,
+.max {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  font-size: 2rem;
+}
+
+.min-temp-icon,
+.max-temp-icon {
+  width: 6rem;
+  height: 6rem;
 }
