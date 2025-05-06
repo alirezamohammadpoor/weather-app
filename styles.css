@@ -89,7 +89,7 @@ form {
   justify-items: center;
   height: 20vh;
   margin-top: 0vh;
-  margin-bottom: 5vh;
+  margin-bottom: 15vh;
 }
 
 .wind,
@@ -101,6 +101,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .weather-info-icon {
@@ -142,7 +143,7 @@ form {
 }
 
 .grid-container p {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .hourly-container {
@@ -166,11 +167,12 @@ form {
 .hourly-item-7 {
   width: 150px;
   height: 150px;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(241, 241, 241);
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  border-radius: 16px;
 }
 
 .hourly-text {
@@ -190,5 +192,110 @@ form {
 
 .hourly-container p {
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 932px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-container {
+    width: 90vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .input-location {
+    width: 100%; /* Make input fill the container */
+    font-size: 1rem; /* Better for mobile input */
+    padding: 10px 20px; /* Adjust padding for touch */
+  }
+
+  .location {
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .weather-icon-left-big,
+  .weather-info-icon-big {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .weather-card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .weather-info {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .temperature {
+    font-size: 4rem;
+  }
+
+  .temperature div {
+    margin-left: 0;
+  }
+
+  .min-max-container {
+    width: 100%;
+    margin-bottom: 5vh;
+  }
+
+  .min,
+  .max {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .min-temp-icon,
+  .max-temp-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 30vh;
+    width: 100%;
+  }
+  .hourly-container {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 50vh;
+    width: 100%;
+  }
+
+  .hourly-item-0,
+  .hourly-item-1,
+  .hourly-item-2,
+  .hourly-item-3,
+  .hourly-item-4,
+  .hourly-item-5,
+  .hourly-item-6,
+  .hourly-item-7 {
+    width: 90px;
+    height: 100px;
+  }
 }
